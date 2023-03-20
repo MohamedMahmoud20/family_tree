@@ -7,7 +7,7 @@ Size getSize({
   return size;
 }
 
-const Color mainColor = Color(0xff2479BF);
+const Color mainColor = Color(0xff1B7D88);
 const Color secColor = Colors.white;
 const Color thirdColor = Color(0xffF1F1F1);
 const String noImage =
