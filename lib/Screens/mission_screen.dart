@@ -5,8 +5,8 @@ class MissionScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Container(
-      color: Colors.blue,
+    return  const Center(
+      child: Text("MissionScreen" , style: TextStyle(fontSize: 30),),
     );
   }
 }
