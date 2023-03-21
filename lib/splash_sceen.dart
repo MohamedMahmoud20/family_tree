@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'Screens/photo_gallery_screen.dart';
 import 'app_manager/routes_manager.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -34,7 +35,7 @@ class _SplashScreenState extends State<SplashScreen> {
     //   }
     //
     //   else {
-        RoutesManager.navigatorAndRemove(context, HomeScreen());
+        RoutesManager.navigatorAndRemove(context, PhotoGallery());
     //   }
     });
   }
