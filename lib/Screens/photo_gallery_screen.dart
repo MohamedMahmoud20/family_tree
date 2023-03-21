@@ -16,7 +16,10 @@ class _PhotoGalleryState extends State<PhotoGallery> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+      ),
       body:   SafeArea(
           child: Container(
             margin: EdgeInsets.symmetric(horizontal: 20),
