@@ -1,5 +1,5 @@
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class LanguageProvider extends ChangeNotifier {
   List<String> languageList = ['English', 'Arabic'];
@@ -11,7 +11,6 @@ class LanguageProvider extends ChangeNotifier {
     "setting": "الاعدادات",
     "contactUs": "تواصل معنا",
     "familyTree": "شجرة الأسرة",
-
   };
   Map<String, String> englishTexts = {
     "login": "Login",
@@ -20,14 +19,13 @@ class LanguageProvider extends ChangeNotifier {
     "setting": "Setting",
     "contactUs": "Contact Us",
     "familyTree": "Family Tree",
-
   };
 
-  void changeLanguage({bool? englishLanguage}) async {
+  void changeLanguage({bool? EnglishLanguage}) async {
     final SharedPreferences sharedPrefernce =
-    await SharedPreferences.getInstance();
+        await SharedPreferences.getInstance();
 
-    isEnglish = englishLanguage!;
+    isEnglish = EnglishLanguage!;
     sharedPrefernce.setBool('savedLanguage', isEnglish);
     notifyListeners();
   }
@@ -40,7 +38,7 @@ class LanguageProvider extends ChangeNotifier {
 
   Future<bool> getLanguage() async {
     final SharedPreferences sharedPrefernce =
-    await SharedPreferences.getInstance();
+        await SharedPreferences.getInstance();
 
     isEnglish = sharedPrefernce.getBool('savedLanguage') ?? false;
 

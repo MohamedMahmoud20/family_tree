@@ -8,21 +8,11 @@ class BlackTitle {
           fontSize: 14,
           fontFamily: 'Cairo',
           fontWeight: FontWeight.bold,
-          color: Colors.black,
+          color: Color(0xff154C61),
         );
   }
 }
 
-class VeryVeryBlackTitle {
-  static TextStyle display5(BuildContext context) {
-    return Theme.of(context).textTheme.headline1!.copyWith(
-          fontSize: 40,
-          fontFamily: 'Cairo',
-          fontWeight: FontWeight.bold,
-          color: Colors.black,
-        );
-  }
-}
 
 class BlackLabel {
   static TextStyle display5(BuildContext context) {
@@ -30,8 +20,9 @@ class BlackLabel {
           fontSize: 12,
           fontFamily: 'Cairo',
           fontWeight: FontWeight.bold,
-          color: Colors.black,
-        );
+      color: Color(0xff154C61),
+
+    );
   }
 }
 
