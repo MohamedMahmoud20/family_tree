@@ -5,6 +5,8 @@ import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'Screens/documents_and_books.dart';
+import 'Screens/library_screen.dart';
 import 'Screens/photo_gallery_screen.dart';
 import 'app_manager/routes_manager.dart';
 
@@ -35,7 +37,7 @@ class _SplashScreenState extends State<SplashScreen> {
     //   }
     //
     //   else {
-        RoutesManager.navigatorAndRemove(context, PhotoGallery());
+        RoutesManager.navigatorAndRemove(context, LibraryScreen());
     //   }
     });
   }

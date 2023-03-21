@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../app_manager/local_data.dart';
+import '../common_widgets/creat_app_bar.dart';
+import '../common_widgets/creat_search.dart';
 import '../common_widgets/creat_text_field.dart';
 
 class PhotoGallery extends StatefulWidget {
@@ -16,11 +18,9 @@ class _PhotoGalleryState extends State<PhotoGallery> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.transparent,
-      ),
-      body:   SafeArea(
+      appBar: CreatAppBar(hasBackButton:true,
+        icon: 'assets/images/photo.svg', iconTitle: "معرض الصور", onIconPressed: () {  },
+      ),      body:   SafeArea(
           child: Container(
             margin: EdgeInsets.symmetric(horizontal: 20),
 
@@ -28,7 +28,7 @@ class _PhotoGalleryState extends State<PhotoGallery> {
               children: [
                 Container(
                   alignment: Alignment.centerRight,
-                  child: CreatTextField(
+                  child: CreatSearch(
                     width: double.infinity,
                     onSubmit: (value){},
                     fillColor: secColor,
