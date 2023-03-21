@@ -1,3 +1,5 @@
+import 'package:family_tree/Screens/photo_gallery_screen.dart';
+import 'package:family_tree/app_manager/routes_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
@@ -7,6 +9,7 @@ import '../common_widgets/creat_app_bar.dart';
 import '../common_widgets/creat_search.dart';
 import '../providers/language_provider.dart';
 import '../utilities/text_style.dart';
+import 'documents_and_books.dart';
 
 // ignore: must_be_immutable
 class LibraryScreen extends StatelessWidget {
@@ -48,25 +51,29 @@ class LibraryScreen extends StatelessWidget {
                     fit: BoxFit.cover)),
           ),
           creatTaps(
-            onTap: () {},
+            onTap: () {
+              RoutesManager.navigatorPush(context, PhotoGallery());
+            },
             context: context,
             backGroundImage: "assets/images/testt.png",
             Icon: "assets/images/camera.svg",
-            albumsCount: "الالبومات ٢٠",
-            imagesCount: "الصور ٣٠٠",
-            count: "العدد ٤٠",
+            albumsCount: "الالبومات     ٢٠",
+            imagesCount: "الصور    ٣٠٠",
+            count: "",
             isDocuments: false,
             iconTitle: 'معرض الصور',
           ),
           creatTaps(
-            onTap: () {},
+            onTap: () {
+              RoutesManager.navigatorPush(context, DocumentsAndBooks());
+
+            },
             context: context,
             backGroundImage: "assets/images/testt.png",
-            Icon: "assets/images/book2"
-                ".svg",
-            albumsCount: "الالبومات ٢٠",
-            imagesCount: "الصور ٣٠٠",
-            count: "العدد ٤٠",
+            Icon: "assets/images/book2.svg",
+            count: "العدد   ٤٠",
+            albumsCount: "",
+            imagesCount: "",
             isDocuments: true,
             iconTitle: 'الوثائق والمخطوطات',
           ),

@@ -37,7 +37,7 @@ class _SplashScreenState extends State<SplashScreen> {
     //   }
     //
     //   else {
-        RoutesManager.navigatorAndRemove(context, LibraryScreen());
+        RoutesManager.navigatorAndRemove(context, HomeScreen());
     //   }
     });
   }

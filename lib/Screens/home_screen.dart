@@ -1,3 +1,4 @@
+import 'package:family_tree/Screens/library_screen.dart';
 import 'package:family_tree/Screens/nav_bar_screens/identity_screen.dart';
 import 'package:family_tree/Screens/news_screens/all_news.dart';
 import 'package:family_tree/app_manager/routes_manager.dart';
@@ -57,9 +58,14 @@ class _HomeScreenState extends State<HomeScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Expanded(
-                        child: horizontalContainer(
-                            image: "assets/images/folder-open.svg",
-                            title: "المكتبه"),
+                        child: InkWell(
+                          onTap: (){
+                           RoutesManager.navigatorPush(context, LibraryScreen());
+                          },
+                          child: horizontalContainer(
+                              image: "assets/images/folder-open.svg",
+                              title: "المكتبه"),
+                        ),
                       ),
                       InkWell(
                         onTap: (){
