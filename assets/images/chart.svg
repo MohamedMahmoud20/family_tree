@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="37.236" height="38.264" viewBox="0 0 37.236 38.264">
+  <g id="Group_2976" data-name="Group 2976" transform="translate(-74.082 -35.75)">
+    <path id="chart-bar" d="M23.5,101.764h5.665a2.031,2.031,0,0,0,1.888-1.888V80.05a2.031,2.031,0,0,0-1.888-1.888H23.5a2.031,2.031,0,0,0-1.888,1.888V99.876A2.031,2.031,0,0,0,23.5,101.764Z" transform="translate(52.719 -28)" fill="#1e8225" stroke="#154c61" stroke-width="0.5"/>
+    <path id="chart-bar-2" data-name="chart-bar" d="M38.148,101.764h5.665A2.031,2.031,0,0,0,45.7,99.876V65.888A2.031,2.031,0,0,0,43.813,64H38.148a2.031,2.031,0,0,0-1.888,1.888V99.876A2.031,2.031,0,0,0,38.148,101.764Z" transform="translate(51.719 -28)" fill="#dc8109" stroke="#154c61" stroke-width="0.5"/>
+    <path id="chart-bar-3" data-name="chart-bar" d="M52.8,101.764h5.665a2.031,2.031,0,0,0,1.888-1.888V70.609a2.031,2.031,0,0,0-1.888-1.888H52.8a2.031,2.031,0,0,0-1.888,1.888V99.876A2.031,2.031,0,0,0,52.8,101.764Z" transform="translate(50.719 -28)" fill="#106dd6" stroke="#154c61" stroke-width="0.5"/>
+  </g>
+</svg>

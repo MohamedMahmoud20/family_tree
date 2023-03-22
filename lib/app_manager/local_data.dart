@@ -8,7 +8,9 @@ Size getSize({
 }
 
 const Color mainColor = Color(0xff1B7D88);
+const Color mainColor2 = Color(0xff154C61);
 const Color secColor = Colors.white;
+const Color greyColor = Color(0xffCBCBCB);
 const Color thirdColor = Color(0xffF1F1F1);
 const String noImage =
     "https://st4.depositphotos.com/14953852/22772/v/600/depositphotos_227725020-stock-illustration-image-available-icon-flat-vector.jpg";

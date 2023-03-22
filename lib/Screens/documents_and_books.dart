@@ -1,25 +1,39 @@
 import 'package:family_tree/utilities/text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:provider/provider.dart';
 
 import '../app_manager/local_data.dart';
 import '../common_widgets/creat_app_bar.dart';
 import '../common_widgets/creat_search.dart';
 import '../common_widgets/creat_text_field.dart';
+import '../providers/language_provider.dart';
 
 class DocumentsAndBooks extends StatefulWidget {
   const DocumentsAndBooks({Key? key}) : super(key: key);
 
   @override
-  State<DocumentsAndBooks> createState() => _DocumentsAndManuscripts();
+  State<DocumentsAndBooks> createState() => _DocumentsAndBooks();
 }
 
-class _DocumentsAndManuscripts extends State<DocumentsAndBooks> {
+class _DocumentsAndBooks extends State<DocumentsAndBooks> {
+  LanguageProvider? languageProvider;
+
+  @override
+  void initState() {
+    languageProvider = Provider.of<LanguageProvider>(context, listen: false);
+
+
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
+    languageProvider = Provider.of<LanguageProvider>(context, listen: true);
+
     return  Scaffold(
       appBar: CreatAppBar(hasBackButton:true,
-        icon: 'assets/images/book.svg', iconTitle: "الوثائق والمخطوطات", onIconPressed: () {  },
+        icon: 'assets/images/book.svg', iconTitle: languageProvider!.getTexts("documentsAndBooks"), onIconPressed: () {  },
       ),
       body:   SafeArea(
           child: Container(
@@ -35,7 +49,7 @@ class _DocumentsAndManuscripts extends State<DocumentsAndBooks> {
                     width: double.infinity,
                     onSubmit: (value){},
                     fillColor: secColor,
-                    label:"البحث",
+                    label:languageProvider!.getTexts("search"),
                   ),
                 ),
                 GridView.builder(

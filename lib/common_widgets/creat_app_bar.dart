@@ -28,7 +28,10 @@ class CreatAppBar extends StatefulWidget with PreferredSizeWidget {
 }
 
 class _CreatAppBarState extends State<CreatAppBar> {
+
+  bool? isArabic;
   LanguageProvider? languageProvider;
+
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +58,20 @@ class _CreatAppBarState extends State<CreatAppBar> {
                       Container(
                         child: creatIcon(
                             onTap: () {
-                              RoutesManager.navigatorAndRemove(context, HomeScreen());
+                              setState(() {
+                                setState(() {
+                                  isArabic = true;
+                                });
+                                print("isArabic after: $isArabic");
+                                isArabic == false
+                                    ? context
+                                    .read<LanguageProvider>()
+                                    .changeLanguage(EnglishLanguage: true)
+                                    : context
+                                    .read<LanguageProvider>()
+                                    .changeLanguage(EnglishLanguage: false);
+                              });
+                              // RoutesManager.navigatorAndRemove(context, HomeScreen());
                             },
                             child: SvgPicture.asset("assets/images/home.svg"
                               // color: mainColor,
@@ -68,7 +84,20 @@ class _CreatAppBarState extends State<CreatAppBar> {
                           ? Container(
                         child: creatIcon(
                             onTap: () {
-                              RoutesManager.pop(context);
+                              // RoutesManager.pop(context);
+                              setState(() {
+                                setState(() {
+                                  isArabic = false;
+                                });
+                                print("isArabic after: $isArabic");
+                                isArabic == false
+                                    ? context
+                                    .read<LanguageProvider>()
+                                    .changeLanguage(EnglishLanguage: true)
+                                    : context
+                                    .read<LanguageProvider>()
+                                    .changeLanguage(EnglishLanguage: false);
+                              });
                             },
                             child: SvgPicture.asset("assets/images/back.svg"
                               // color: mainColor,

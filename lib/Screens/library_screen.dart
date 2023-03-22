@@ -21,7 +21,7 @@ class LibraryScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: CreatAppBar(hasBackButton:true,
-        icon: 'assets/images/folder-open.svg', iconTitle: "المكتبه", onIconPressed: () {  },
+        icon: 'assets/images/folder-open.svg', iconTitle: languageProvider!.getTexts("library"), onIconPressed: () {  },
       ),
 
       body: ListView(
@@ -34,7 +34,7 @@ class LibraryScreen extends StatelessWidget {
               width: double.infinity,
               onSubmit: (value){},
               fillColor: secColor,
-              label:"البحث",
+              label:languageProvider!.getTexts("search"),
             ),
 
           ),
@@ -57,11 +57,11 @@ class LibraryScreen extends StatelessWidget {
             context: context,
             backGroundImage: "assets/images/testt.png",
             Icon: "assets/images/camera.svg",
-            albumsCount: "الالبومات     ٢٠",
-            imagesCount: "الصور    ٣٠٠",
+            albumsCount: "${languageProvider!.getTexts("albums")}     ٢٠",
+            imagesCount: "${languageProvider!.getTexts("photos")}    ٣٠٠",
             count: "",
             isDocuments: false,
-            iconTitle: 'معرض الصور',
+            iconTitle: languageProvider!.getTexts("gallery"),
           ),
           creatTaps(
             onTap: () {
@@ -71,11 +71,11 @@ class LibraryScreen extends StatelessWidget {
             context: context,
             backGroundImage: "assets/images/testt.png",
             Icon: "assets/images/book2.svg",
-            count: "العدد   ٤٠",
+            count: "${languageProvider!.getTexts("num")}   ٤٠",
             albumsCount: "",
             imagesCount: "",
             isDocuments: true,
-            iconTitle: 'الوثائق والمخطوطات',
+            iconTitle: languageProvider!.getTexts("documentsAndBooks"),
           ),
         ],
       ),

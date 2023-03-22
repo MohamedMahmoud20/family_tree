@@ -1,11 +1,13 @@
 import 'package:family_tree/utilities/text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:provider/provider.dart';
 
 import '../app_manager/local_data.dart';
 import '../common_widgets/creat_app_bar.dart';
 import '../common_widgets/creat_search.dart';
 import '../common_widgets/creat_text_field.dart';
+import '../providers/language_provider.dart';
 
 class PhotoGallery extends StatefulWidget {
   const PhotoGallery({Key? key}) : super(key: key);
@@ -15,12 +17,23 @@ class PhotoGallery extends StatefulWidget {
 }
 
 class _PhotoGalleryState extends State<PhotoGallery> {
+  LanguageProvider? languageProvider;
   @override
+  void initState() {
+    languageProvider = Provider.of<LanguageProvider>(context, listen: false);
+    super.initState();
+  }
+
+  @override
+
   Widget build(BuildContext context) {
+    languageProvider = Provider.of<LanguageProvider>(context, listen: true);
+
     return  Scaffold(
       appBar: CreatAppBar(hasBackButton:true,
-        icon: 'assets/images/photo.svg', iconTitle: "معرض الصور", onIconPressed: () {  },
-      ),      body:   SafeArea(
+        icon: 'assets/images/photo.svg', iconTitle: languageProvider!.getTexts("gallery"), onIconPressed: () {  },
+      ),
+      body:   SafeArea(
           child: Container(
             margin: EdgeInsets.symmetric(horizontal: 20),
 
@@ -32,7 +45,7 @@ class _PhotoGalleryState extends State<PhotoGallery> {
                     width: double.infinity,
                     onSubmit: (value){},
                     fillColor: secColor,
-                    label:"البحث",
+                    label:languageProvider!.getTexts("search"),
                   ),
                 ),
                 ListView.builder(
