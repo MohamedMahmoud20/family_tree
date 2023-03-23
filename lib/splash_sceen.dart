@@ -1,11 +1,14 @@
 
 import 'package:family_tree/Screens/guide_screens/guide_screen.dart';
 import 'package:family_tree/Screens/home_screen.dart';
+import 'package:family_tree/Screens/tree_screens/tree_screen.dart';
 import 'package:family_tree/providers/language_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'Screens/chaaracters_screen.dart';
+import 'Screens/contact_us/contact_us.dart';
 import 'Screens/documents_and_books.dart';
 import 'Screens/library_screen.dart';
 import 'Screens/nasab_screen.dart';
@@ -39,7 +42,7 @@ class _SplashScreenState extends State<SplashScreen> {
     //   }
     //
     //   else {
-        RoutesManager.navigatorAndRemove(context, HomeScreen());
+        RoutesManager.navigatorAndRemove(context, TreeScreen());
     //   }
     });
   }

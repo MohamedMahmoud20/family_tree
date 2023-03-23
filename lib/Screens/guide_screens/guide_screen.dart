@@ -228,67 +228,57 @@ class _GuideScreenState extends State<GuideScreen> {
                                 children: [
                                   Row(
                                     children: [
-                                      Stack(
-                                        children: [
-                                          Container(
-                                            padding: EdgeInsets.symmetric(
-                                                horizontal: 4),
-                                            height: getSize(context: context)
-                                                    .height *
-                                                0.03,
-                                            width: getSize(context: context)
-                                                    .width *
-                                                0.2,
-                                            alignment: Alignment.centerLeft,
-                                            decoration: BoxDecoration(
-                                                border: Border.all(
-                                                    color: Color(0xffE9E9E9),
-                                                    width: 1),
-                                                borderRadius:
-                                                    BorderRadius.circular(5)),
-                                            child: Text(
-                                              "0012",
-                                              style:
-                                                  BlackLabel.display5(context),
-                                            ),
-                                          ),
-                                          Container(
-                                            height: getSize(context: context)
-                                                    .height *
-                                                0.03,
-                                            width: getSize(context: context)
-                                                    .width *
-                                                0.2 *
-                                                0.4,
-                                            alignment: Alignment.center,
-                                            decoration: BoxDecoration(
-                                                color: Colors.red,
-                                                borderRadius:
-                                                    BorderRadius.circular(5)),
-                                            child: Text(
-                                              "أس",
-                                              style:
-                                                  BlackLabel.display5(context),
-                                            ),
-                                          ),
-                                        ],
+                                      Container(
+                                        padding: EdgeInsets.all(3),
+                                        alignment: Alignment.center,
+                                        decoration: BoxDecoration(
+                                            color: Colors.redAccent.withOpacity(0.85),
+                                            borderRadius:
+                                            BorderRadius.only(
+                                              topLeft: Radius.circular(0),
+                                              bottomLeft: Radius.circular(0),
+                                              bottomRight: Radius.circular(5),
+                                              topRight: Radius.circular(5),
+                                            )),
+                                        child: Text(
+                                          "أس",
+                                          style:
+                                          BlackLabel.display5(context),
+                                        ),
+                                      ),
+
+                                      Container(
+                                        padding: EdgeInsets.all(2),
+                                        alignment: Alignment.centerLeft,
+                                        decoration: BoxDecoration(
+                                            border: Border.all(
+                                                color: Color(0xffE9E9E9),
+                                                width: 1),
+                                            borderRadius:
+                                            BorderRadius.only(
+                                              topLeft: Radius.circular(5),
+                                              bottomLeft: Radius.circular(5),
+                                              bottomRight: Radius.circular(0),
+                                              topRight: Radius.circular(0),
+                                            )),
+                                        child: Text(
+                                          "0012",
+                                          style:
+                                          BlackLabel.display5(context),
+                                        ),
                                       ),
                                       SizedBox(
                                         width: 10,
                                       ),
                                       Container(
-                                        height:
-                                            getSize(context: context).height *
-                                                0.03,
-                                        width: getSize(context: context).width *
-                                            0.1,
+                                       padding: EdgeInsets.all(3),
                                         alignment: Alignment.center,
                                         decoration: BoxDecoration(
                                             color: Color(0xff18B566),
                                             borderRadius:
                                                 BorderRadius.circular(5)),
                                         child: Text(
-                                          "10",
+                                          "1000",
                                           style: BlackLabel.display5(context),
                                         ),
                                       ),

@@ -1,6 +1,7 @@
 import 'package:family_tree/Screens/home_screen.dart';
 import 'package:family_tree/services/shared_preference.dart';
 import 'package:family_tree/splash_sceen.dart';
+import 'package:family_tree/test_tree.dart';
 import 'package:family_tree/utilities/providers.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -40,7 +41,7 @@ class MyApp extends StatelessWidget {
         providers: providers,
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
-          home: SplashScreen(),
+          home: TreeTest(),
           builder: (context, child) {
             return MediaQuery(
               data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),

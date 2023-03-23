@@ -1,8 +1,8 @@
-import 'package:family_tree/Screens/home_screen.dart';
 import 'package:family_tree/app_manager/routes_manager.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
+import '../Screens/home_screen.dart';
 import '../app_manager/local_data.dart';
 import '../providers/language_provider.dart';
 import '../utilities/text_style.dart';
@@ -32,6 +32,12 @@ class _CreatAppBarState extends State<CreatAppBar> {
   bool? isArabic;
   LanguageProvider? languageProvider;
 
+  @override
+  void initState() {
+    languageProvider = Provider.of<LanguageProvider>(context, listen: false);
+    isArabic = !languageProvider!.isEnglish;
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -58,20 +64,7 @@ class _CreatAppBarState extends State<CreatAppBar> {
                       Container(
                         child: creatIcon(
                             onTap: () {
-                              setState(() {
-                                setState(() {
-                                  isArabic = true;
-                                });
-                                print("isArabic after: $isArabic");
-                                isArabic == false
-                                    ? context
-                                    .read<LanguageProvider>()
-                                    .changeLanguage(EnglishLanguage: true)
-                                    : context
-                                    .read<LanguageProvider>()
-                                    .changeLanguage(EnglishLanguage: false);
-                              });
-                              // RoutesManager.navigatorAndRemove(context, HomeScreen());
+                              RoutesManager.navigatorAndRemove(context, HomeScreen());
                             },
                             child: SvgPicture.asset("assets/images/home.svg"
                               // color: mainColor,
@@ -82,22 +75,10 @@ class _CreatAppBarState extends State<CreatAppBar> {
                       ),
                       widget.hasBackButton == true
                           ? Container(
+                        width: 50,
                         child: creatIcon(
                             onTap: () {
-                              // RoutesManager.pop(context);
-                              setState(() {
-                                setState(() {
-                                  isArabic = false;
-                                });
-                                print("isArabic after: $isArabic");
-                                isArabic == false
-                                    ? context
-                                    .read<LanguageProvider>()
-                                    .changeLanguage(EnglishLanguage: true)
-                                    : context
-                                    .read<LanguageProvider>()
-                                    .changeLanguage(EnglishLanguage: false);
-                              });
+                              RoutesManager.pop(context);
                             },
                             child: SvgPicture.asset("assets/images/back.svg"
                               // color: mainColor,
@@ -127,7 +108,19 @@ class _CreatAppBarState extends State<CreatAppBar> {
                           width: getSize(context: context).width*0.09,
                           padding: EdgeInsets.all(7),
                           child: creatIcon(
-                              onTap: () {},
+                              onTap: () {
+                                setState(() {
+                                  isArabic = !isArabic!;
+                                });
+                                print("isArabic after: $isArabic");
+                                isArabic == false
+                                    ? context
+                                    .read<LanguageProvider>()
+                                    .changeLanguage(EnglishLanguage: true)
+                                    : context
+                                    .read<LanguageProvider>()
+                                    .changeLanguage(EnglishLanguage: false);
+                              },
                               child: SvgPicture.asset(
                                 widget.icon,
                                 // color: mainColor,

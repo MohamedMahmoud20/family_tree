@@ -8,8 +8,11 @@ import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 
 import '../app_manager/local_data.dart';
+import '../common_widgets/creat_alert_dialog.dart';
 import '../providers/language_provider.dart';
 import '../utilities/text_style.dart';
+import 'chaaracters_screen.dart';
+import 'contact_us/contact_us.dart';
 import 'nasab_screen.dart';
 import 'nav_bar_screens/mission_screen.dart';
 import 'nav_bar_screens/setting_screen.dart';
@@ -127,17 +130,29 @@ class _HomeScreenState extends State<HomeScreen> {
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: [
                                     Expanded(
-                                        child: verticalContainer(
-                                            image: "assets/images/3 User.svg",
-                                            title: languageProvider!.getTexts("characters"),
-                                            size: 45,
-                                            fontSize: 18)),
+                                        child: InkWell(
+                                          onTap: (){
+                                            RoutesManager.navigatorPush(context, CharactersScreen());
+
+                                          },
+                                          child: verticalContainer(
+                                              image: "assets/images/3 User.svg",
+                                              title: languageProvider!.getTexts("characters"),
+                                              size: 45,
+                                              fontSize: 18),
+                                        )),
                                     Expanded(
-                                        child: verticalContainer(
-                                            image: "assets/images/tree.svg",
-                                            title: languageProvider!.getTexts("tree"),
-                                            size: 45,
-                                            fontSize: 18)),
+                                        child: InkWell(
+                                          onTap: (){
+                                            CreatAlertDialog().creatTree(context: context);
+
+                                          },
+                                          child: verticalContainer(
+                                              image: "assets/images/folder-open.svg",
+                                              title: languageProvider!.getTexts("tree"),
+                                              size: 45,
+                                              fontSize: 18),
+                                        )),
                                   ],
                                 )
                               ],
@@ -155,42 +170,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   designOne(
                     onTap: (){
-
-                        setState(() {
-                          setState(() {
-                            isArabic = false;
-                          });
-                          print("isArabic after: $isArabic");
-                          isArabic == false
-                              ? context
-                              .read<LanguageProvider>()
-                              .changeLanguage(EnglishLanguage: true)
-                              : context
-                              .read<LanguageProvider>()
-                              .changeLanguage(EnglishLanguage: false);
-                        });
-
+                      RoutesManager.navigatorPush(context, ContactUs());
                     },
                       image: "assets/images/Group 2963.svg",
                       title: languageProvider!.getTexts("contact"),
                       color: mainColor,
                       colorTitle: Colors.black),
                   designOne(
-                      onTap: (){
-                        setState(() {
-                          setState(() {
-                            isArabic = true;
-                          });
-                          print("isArabic after: $isArabic");
-                          isArabic == false
-                              ? context
-                              .read<LanguageProvider>()
-                              .changeLanguage(EnglishLanguage: true)
-                              : context
-                              .read<LanguageProvider>()
-                              .changeLanguage(EnglishLanguage: false);
-                        });
-                      },
+                      onTap: (){},
                       image: "assets/images/bullseye.svg",
                       title: languageProvider!.getTexts("club"),
                       color: mainColor,
