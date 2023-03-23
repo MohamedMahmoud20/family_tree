@@ -31,22 +31,27 @@ class _TreeTestState extends State<TreeTest> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                RotationTransition(
-                  turns: AlwaysStoppedAnimation(-5/360),
-                  child: Container(
-                    height: 300,
-                    width: 2,
-                    color: Colors.black,
-                  ),
-                ),
-                RotationTransition(
-                  turns: AlwaysStoppedAnimation(15/360),
-                  child: Container(
-                    height: 300,
-                    width: 2,
-                    color: Colors.black,
-                  ),
-                ),
+                Transform.rotate(angle: 121,alignment: Alignment.topCenter,child: Container(
+                  height: 300,
+                  width: 2,
+                  color: Colors.black,
+                ),),
+                Transform.rotate(angle: 30,alignment: Alignment.topCenter,child: Container(
+                  height: 300,
+                  width: 2,
+                  color: Colors.black,
+                ),),
+                Transform.rotate(angle: 95,alignment: Alignment.topCenter,child: Container(
+                  height: 300,
+                  width: 2,
+                  color: Colors.black,
+                ),),
+                Transform.rotate(angle: 40,alignment: Alignment.topCenter,child: Container(
+                  height: 300,
+                  width: 2,
+                  color: Colors.black,
+                ),),
+
 
               ],
             )
