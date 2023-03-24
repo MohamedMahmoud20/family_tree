@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
         providers: providers,
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
-          home: TreeTest(),
+          home: SplashScreen(),
           builder: (context, child) {
             return MediaQuery(
               data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
@@ -52,7 +52,6 @@ class MyApp extends StatelessWidget {
       ),);
   }
 }
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // flutter pub run flutter_launcher_icons:main
 // myList.removeWhere((item) => ["", null, false, 0].contains(item));
