@@ -11,7 +11,7 @@ import 'Screens/chaaracters_screen.dart';
 import 'Screens/contact_us/contact_us.dart';
 import 'Screens/documents_and_books.dart';
 import 'Screens/library_screen.dart';
-import 'Screens/mawaled_screens/mawaled_screen.dart';
+import 'Screens/mawaled_screens/briths_screen.dart';
 import 'Screens/nasab_screen.dart';
 import 'Screens/photo_gallery_screen.dart';
 import 'app_manager/routes_manager.dart';

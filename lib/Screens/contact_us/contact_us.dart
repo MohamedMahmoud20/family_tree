@@ -1,4 +1,3 @@
-import 'package:family_tree/Screens/mawaled_screens/mawaled_screen.dart';
 import 'package:family_tree/app_manager/local_data.dart';
 import 'package:family_tree/app_manager/routes_manager.dart';
 import 'package:family_tree/common_widgets/creat_app_bar.dart';
@@ -8,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../common_widgets/creat_alert_dialog.dart';
+import '../briths_screens/briths_screen.dart';
 
 // ignore: must_be_immutable
 class ContactUs extends StatelessWidget {
