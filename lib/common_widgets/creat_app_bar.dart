@@ -12,6 +12,7 @@ class CreatAppBar extends StatefulWidget with PreferredSizeWidget {
   final String iconTitle;
   final Size preferredSize;
   final bool hasBackButton;
+   bool? hasBirths;
   final void Function() onIconPressed;
 
   CreatAppBar(
@@ -19,7 +20,7 @@ class CreatAppBar extends StatefulWidget with PreferredSizeWidget {
         required this.icon,
         required this.hasBackButton,
         required this.iconTitle,
-        required this.onIconPressed})
+        required this.onIconPressed,  this.hasBirths})
       : preferredSize = Size.fromHeight(50.0),
         super(key: key);
 
@@ -99,13 +100,18 @@ class _CreatAppBarState extends State<CreatAppBar> {
                           : TextDirection.rtl,
                       children: [
                         Container(
-                          height: getSize(context: context).height*0.038,
+                          height:
+                          widget.hasBirths==true?
+                          getSize(context: context).height*0.043:
+                          getSize(context: context).height*0.038,
                           decoration: BoxDecoration(
                               color: mainColor,
-
                               borderRadius: BorderRadius.circular(10)
                           ),
-                          width: getSize(context: context).width*0.09,
+                          width:
+                          widget.hasBirths==true?
+                          getSize(context: context).width*0.094:
+                          getSize(context: context).width*0.09,
                           padding: EdgeInsets.all(7),
                           child: creatIcon(
                               onTap: () {
@@ -129,7 +135,23 @@ class _CreatAppBarState extends State<CreatAppBar> {
                         SizedBox(
                           width: getSize(context: context).width*0.03,
                         ),
-                        Text(
+                      widget.hasBirths==true?
+
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              SizedBox(height: 5,),
+                              Text(
+                                languageProvider!.getTexts("contact"),
+                              style: MainLabel.display5(context).copyWith(fontSize: 10),
+                            ),
+                              Text(
+                                widget.iconTitle,
+                                style: MainLabel.display5(context),
+                              )
+                            ],
+                          )
+                          :  Text(
                           widget.iconTitle,
                           style: MainTitle.display5(context),
                         )

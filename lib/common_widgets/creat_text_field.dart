@@ -44,6 +44,7 @@ class CreatTextField extends StatelessWidget {
   enable,
       obSecureText,
       isIcon,
+      isContact,
       isLoginDecoration;
   final TextInputType? keyboardType;
 
@@ -75,7 +76,7 @@ class CreatTextField extends StatelessWidget {
     this.prefixIcon,
 
     this.isLoginDecoration,
-    this.priceUnitStyle, this.onSubmit, this.validator, this.suffixIcon, this.decoration,
+    this.priceUnitStyle, this.onSubmit, this.validator, this.suffixIcon, this.decoration, this.isContact,
   });
 
   LanguageProvider? languageProvider;
@@ -132,7 +133,11 @@ class CreatTextField extends StatelessWidget {
                 decoration: InputDecoration(
 
                   isDense: true,
-                  contentPadding: EdgeInsets.symmetric(vertical:  getSize(context: context).height*0.01, horizontal: getSize(context: context).width*0.03),
+                  contentPadding: EdgeInsets.symmetric(vertical:
+    isContact==true?
+                  getSize(context: context).height*0.001:
+                  getSize(context: context).height*0.01,
+                      horizontal: getSize(context: context).width*0.03),
                   filled: true,
                   fillColor: fillColor ?? Colors.white,
                   hintText: (label ?? " "),

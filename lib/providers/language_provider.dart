@@ -62,6 +62,8 @@ class LanguageProvider extends ChangeNotifier {
     "inductionTree":  "شجره الاسره التفاعليه",
     "symbolsTree": "شجره التعريف بالرموز والالوان",
     "printedTree": "شجره الاسره المطبوعه",
+    "births": "المواليد",
+    "review": "مراجعه",
   };
   Map<String, String> englishTexts = {
     "login": "Login",
@@ -121,6 +123,8 @@ class LanguageProvider extends ChangeNotifier {
     "inductionTree":  "Interactive family tree",
     "symbolsTree": "Identification tree with symbols and colors",
     "printedTree": "printed family tree",
+    "births": "Births",
+    "review": "Review",
   };
 
   void changeLanguage({bool? EnglishLanguage}) async {
