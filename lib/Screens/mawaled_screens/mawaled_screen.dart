@@ -10,13 +10,13 @@ import '../../common_widgets/creat_text_field.dart';
 import '../../providers/language_provider.dart';
 import '../../utilities/text_style.dart';
 
-class MawaledScreen extends StatefulWidget {
+class BirthsScreen extends StatefulWidget {
 
   @override
-  State<MawaledScreen> createState() => _MawaledScreenState();
+  State<BirthsScreen> createState() => _BirthsScreenState();
 }
 
-class _MawaledScreenState extends State<MawaledScreen> {
+class _BirthsScreenState extends State<BirthsScreen> {
   LanguageProvider? languageProvider;
 
   @override
@@ -244,7 +244,6 @@ class _MawaledScreenState extends State<MawaledScreen> {
               customBaby(title: "الاول", onChild: false),
               customBaby(title: "الاول", onChild: true),
               // customBaby(title: "التاني"),
-
 
 
                 Card(

@@ -1,4 +1,6 @@
+import 'package:family_tree/Screens/mawaled_screens/mawaled_screen.dart';
 import 'package:family_tree/app_manager/local_data.dart';
+import 'package:family_tree/app_manager/routes_manager.dart';
 import 'package:family_tree/common_widgets/creat_app_bar.dart';
 import 'package:family_tree/providers/language_provider.dart';
 import 'package:family_tree/utilities/text_style.dart';
@@ -40,7 +42,9 @@ class ContactUs extends StatelessWidget {
             creatLongButton(
                 context: context,
                 title: languageProvider!.getTexts("MyPage"),
-                onTap: () {}),
+                onTap: () {
+
+                }),
             Row(
               children: [
                 creatShortButton(
@@ -67,7 +71,9 @@ class ContactUs extends StatelessWidget {
                 creatShortButton(
                     context: context,
                     title: languageProvider!.getTexts("birthNews"),
-                    onTap: () {}),
+                    onTap: () {
+                      RoutesManager.navigatorPush(context, BirthsScreen());
+                    }),
               ],
             ),
             Row(

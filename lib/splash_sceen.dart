@@ -43,7 +43,7 @@ class _SplashScreenState extends State<SplashScreen> {
     //   }
     //
     //   else {
-        RoutesManager.navigatorAndRemove(context, MawaledScreen());
+        RoutesManager.navigatorAndRemove(context, HomeScreen());
     //   }
     });
   }
