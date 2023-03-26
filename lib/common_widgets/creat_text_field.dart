@@ -110,7 +110,7 @@ class CreatTextField extends StatelessWidget {
               width:width??getSize(context: context).width*0.7,
               decoration:BoxDecoration(
                 borderRadius: borderRadius??BorderRadius.circular(10),
-                border: Border.all(color: Color(0xffE8E6E9), width: 1),
+                // border: Border.all(color: Color(0xffE8E6E9), width: 1),
               ),
               child: TextFormField(
                 enabled: enable,
@@ -133,8 +133,7 @@ class CreatTextField extends StatelessWidget {
                 decoration: InputDecoration(
 
                   isDense: true,
-                  contentPadding: EdgeInsets.symmetric(vertical:
-    isContact==true?
+                  contentPadding: EdgeInsets.symmetric(vertical: isContact==true?
                   getSize(context: context).height*0.001:
                   getSize(context: context).height*0.01,
                       horizontal: getSize(context: context).width*0.03),
@@ -147,10 +146,10 @@ class CreatTextField extends StatelessWidget {
                   prefixIcon: prefixIcon,
 
                   enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white, width: 1.0),
+                      borderSide: BorderSide(color: Colors.white, width: 0.0),
                       borderRadius:borderRadius?? BorderRadius.all(Radius.circular(8))),
                   focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.transparent, width: 1.0),
+                      borderSide: BorderSide(color: greyColor, width: 0.0),
                       borderRadius: borderRadius?? BorderRadius.all(Radius.circular(8.0))),
                 ),
               ),

@@ -1,9 +1,8 @@
-import 'package:family_tree/app_manager/routes_manager.dart';
+import 'package:family_tree/common_widgets/create_button2.dart';
+import 'package:family_tree/common_widgets/create_choose_from_contact.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
-
 import '../../app_manager/local_data.dart';
 import '../../common_widgets/creat_app_bar.dart';
 import '../../common_widgets/creat_text_field.dart';
@@ -18,14 +17,6 @@ class BirthsScreen extends StatefulWidget {
 
 class _BirthsScreenState extends State<BirthsScreen> {
   LanguageProvider? languageProvider;
-
-  @override
-  void initState() {
-
-    languageProvider = Provider.of<LanguageProvider>(context, listen: false);
-
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -49,28 +40,9 @@ class _BirthsScreenState extends State<BirthsScreen> {
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 SizedBox(height: getSize(context: context).height*0.02,),
-                Card(
-                  elevation: 5,
-                  color: greyColor,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5)
-                  ),
-                  // margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-                  child:  Container(
-                    padding: EdgeInsets.all(7),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(languageProvider!.getTexts("review"), style: WhiteTitle.display5(context),),
-                        SizedBox(width: 10,),
-                        Icon(Icons.arrow_forward_ios_outlined, size: 18,color: Colors.white,),
-
-                      ],
-                    ),
-                  ),
-                ),
+                CreateButton2(isIcon: true,),
                 SizedBox(height: getSize(context: context).height*0.03,),
-                Text("استمارة اخبار المواليد. إرسالك لأي موضوع في هذا القسم هو موافقتك على نشره في تطبيق الاسرة",
+                Text(languageProvider!.getTexts("birthNewsForm"),
                   textAlign: TextAlign.end,
                 ),
                 SizedBox(height: getSize(context: context).height*0.03,),
@@ -83,67 +55,13 @@ class _BirthsScreenState extends State<BirthsScreen> {
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       SizedBox(height: 5,),
-                      Text("معلومات الوالدين" ,
+                      Text(languageProvider!.getTexts("parentInfo") ,
                         style: MainLabel.display5(context),),
                       SizedBox(height: 5,),
-                      Text("الرجاء إختيار والد او والدة الطفل من الدليل" ,
+                      Text(languageProvider!.getTexts("chooseParent"),
                         style: BlackLabel.display5(context).copyWith(color: Colors.black),),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        SizedBox(width: 10,),
-                        // Align(
-                        //   alignment: Alignment.bottomCenter,
-                        //   child: SvgPicture.asset(
-                        //     height: 20,
-                        //       "assets/images/exit.svg",
-                        //       alignment: Alignment.center),
-                        // ),
-                        Column(
-                          children: [
-                            SizedBox(height: getSize(context: context).height*0.01,),
-                            FaIcon(FontAwesomeIcons.remove,size: 20,color: Colors.red,),
-                            // FaIcon(FontAwesomeIcons.remove,size: 25),
-                          ],
-                        ),
-                        Expanded(
-                          child: CreatTextField(
-                            isContact: true,
-                            height: getSize(context: context).height*0.04,
-                            fillColor: greyColor,
-                            label: "اضفط",
-                            labelStyle: WhiteTitle.display5(context),
-                            suffixIcon: InkWell(
-                              onTap: (){
-                                print("Dddddddddd");
-                              },
-                              child: Container(
-                                padding: EdgeInsets.all(5),
-                                decoration: BoxDecoration(
-                                    color: mainColor2,
-                                    borderRadius: BorderRadius.only(
-                                      bottomLeft:languageProvider!.isEnglish==true?
-                                      Radius.circular(0):Radius.circular(5),
-                                      topLeft: languageProvider!.isEnglish==true?
-                                      Radius.circular(0):Radius.circular(5),
-                                      bottomRight:languageProvider!.isEnglish==true?
-                                      Radius.circular(5):Radius.circular(0),
-
-                                      topRight: languageProvider!.isEnglish==true?
-                                      Radius.circular(5):Radius.circular(0),
-                                    )
-                                ),
-                                child: SvgPicture.asset("assets/images/choose.svg"),
-                              ),
-                            ),
-
-                          ),
-                        ),
-
-                      ],
-                    ),
+                    CreateChooseFromContact(),
                       SizedBox(height: getSize(context: context).height*0.01,),
-
 
                     ],
                   ),
@@ -161,61 +79,13 @@ class _BirthsScreenState extends State<BirthsScreen> {
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       SizedBox(height: 5,),
-                      Text("معلومات الام" ,
+                      Text(languageProvider!.getTexts("motherInfo") ,
                         style: MainLabel.display5(context).copyWith(color: Colors.black),),
                       SizedBox(height: 5,),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        SizedBox(width: 10,),
-
-                        Column(
-                          children: [
-                            SizedBox(height: getSize(context: context).height*0.01,),
-                            FaIcon(FontAwesomeIcons.remove,size: 20,color: Colors.red,),
-                          ],
-                        ),
-                        Expanded(
-                          child: CreatTextField(
-                            isContact: true,
-                            height: getSize(context: context).height*0.04,
-                            fillColor: greyColor,
-                            label: "اضفط",
-                            labelStyle: WhiteTitle.display5(context),
-                            suffixIcon: InkWell(
-                              onTap: (){
-                                print("Dddddddddd");
-                              },
-                              child: Container(
-                                padding: EdgeInsets.all(5),
-                                decoration: BoxDecoration(
-                                    color: mainColor2,
-                                    borderRadius: BorderRadius.only(
-                                      bottomLeft:languageProvider!.isEnglish==true?
-                                      Radius.circular(0):Radius.circular(5),
-                                      topLeft: languageProvider!.isEnglish==true?
-                                      Radius.circular(0):Radius.circular(5),
-                                      bottomRight:languageProvider!.isEnglish==true?
-                                      Radius.circular(5):Radius.circular(0),
-
-                                      topRight: languageProvider!.isEnglish==true?
-                                      Radius.circular(5):Radius.circular(0),
-                                    )
-                                ),
-                                child: SvgPicture.asset("assets/images/choose.svg"),
-                              ),
-                            ),
-
-                          ),
-                        ),
-
-                        SizedBox(height: 10,),
-
-                      ],
-                    ),
+                      CreateChooseFromContact(),
                       SizedBox(height: getSize(context: context).height*0.03,),
 
-                      Text("في حالة عدم وجود اسم الأم في القائمة يرجى الإبلاغ من خلال ايقونه تواصل",
+                      Text(languageProvider!.getTexts("pressContact"),
                         textAlign: TextAlign.end,
                       ),
 
@@ -240,7 +110,6 @@ class _BirthsScreenState extends State<BirthsScreen> {
                 ),
 
                 ),
-
               customBaby(title: "الاول", onChild: false),
               customBaby(title: "الاول", onChild: true),
               // customBaby(title: "التاني"),
@@ -255,7 +124,7 @@ class _BirthsScreenState extends State<BirthsScreen> {
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         SizedBox(height: 5,),
-                        Text("معلومات الاب" ,
+                        Text(languageProvider!.getTexts("fatherInfo") ,
                           style: MainLabel.display5(context),),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -268,7 +137,8 @@ class _BirthsScreenState extends State<BirthsScreen> {
                                 onPressed: (){}, child:
                               Row(
                                 children: [
-                                  Text("من داخل الاسره" , style: WhiteTitle.display5(context),),
+                                  Text(languageProvider!.getTexts("outsideFamily") ,
+                                    style: WhiteTitle.display5(context),),
                                   Icon(Icons.add , color: Colors.white,)
                                 ],
                               )
@@ -282,7 +152,8 @@ class _BirthsScreenState extends State<BirthsScreen> {
                                 onPressed: (){}, child:
                               Row(
                                 children: [
-                                  Text("من داخل الاسره" , style: WhiteTitle.display5(context),),
+                                  Text(languageProvider!.getTexts("insideFamily") ,
+                                    style: WhiteTitle.display5(context),),
                                   Icon(Icons.add, color: Colors.white,)
                                 ],
                               )
@@ -358,7 +229,7 @@ class _BirthsScreenState extends State<BirthsScreen> {
                     children: [
                       SizedBox(width: 10,),
                       Text(
-                        "الجنس",
+                        languageProvider!.getTexts("gender"),
                         style: WhiteLabel.display5(context).
                         copyWith(fontSize: 14 ),
                       ),
@@ -372,7 +243,7 @@ class _BirthsScreenState extends State<BirthsScreen> {
                   )),
             ),
             SizedBox(height: 10,),
-            Text("اسم المولود رباعي" , style: MainLabel.display5(context).copyWith(color: mainColor),),
+            Text(languageProvider!.getTexts("babyName") , style: MainLabel.display5(context).copyWith(color: mainColor),),
             SizedBox(height: 10,),
             Row(
               children: [
@@ -386,7 +257,7 @@ class _BirthsScreenState extends State<BirthsScreen> {
                 containerCustom(),
                 SizedBox(width: 10,),
                 Expanded(child: CreatTextField(
-                  label: "الاسم الاول",
+                  label: languageProvider!.getTexts("firstName"),
                   labelStyle: MainLabel.display5(context).copyWith(fontSize: 10),
                 )),
               ],

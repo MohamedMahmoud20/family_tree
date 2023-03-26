@@ -1,3 +1,4 @@
+import 'package:family_tree/Screens/deaths_screen/death_screen.dart';
 import 'package:family_tree/app_manager/local_data.dart';
 import 'package:family_tree/app_manager/routes_manager.dart';
 import 'package:family_tree/common_widgets/creat_app_bar.dart';
@@ -81,7 +82,9 @@ class ContactUs extends StatelessWidget {
                 creatShortButton(
                     context: context,
                     title: languageProvider!.getTexts("deathNews"),
-                    onTap: () {}),
+                    onTap: () {
+                      RoutesManager.navigatorPush(context, DeathsScreen());
+                    }),
                 SizedBox(width: getSize(context: context).width * 0.04),
                 creatShortButton(
                     context: context,

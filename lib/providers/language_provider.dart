@@ -63,7 +63,27 @@ class LanguageProvider extends ChangeNotifier {
     "symbolsTree": "شجره التعريف بالرموز والالوان",
     "printedTree": "شجره الاسره المطبوعه",
     "births": "المواليد",
+    "deaths": "الوفيات",
     "review": "مراجعه",
+    "close": "اغلاق",
+    "next": "التالي",
+    "click": "اضفط",
+    "infoDeath": "معلومات المتوفي/المتوفية",
+    "infoDeath2": "الرجاء اختيار الشخص الذي تود الإبلاغ عن وفاته من خلال الخيارين التاليين",
+    "deathNewsForm": "استمارة اخبار الوفيات. إرسالك لأي موضوع في هذا القسم هو موافقتك على نشره في تطبيق الاسرة",
+    "birthNewsForm": "استمارة اخبار المواليد. إرسالك لأي موضوع في هذا القسم هو موافقتك على نشره في تطبيق الاسرة",
+    "parentInfo": "معلومات الوالدين",
+    "chooseParent": "الرجاء إختيار والد او والدة الطفل من الدليل",
+    "motherInfo":"معلومات الام",
+    "fatherInfo":"معلومات الاب",
+    "pressContact":"في حالة عدم وجود اسم الأم في القائمة يرجى الإبلاغ من خلال ايقونه تواصل",
+    "insideFamily":"من داخل الاسره",
+    "outsideFamily":"من خارج الاسره",
+    "gender":"الجنس",
+    "babyName":"اسم المولود رباعي",
+    "firstName":"الاسم الاول",
+
+
   };
   Map<String, String> englishTexts = {
     "login": "Login",
@@ -125,6 +145,26 @@ class LanguageProvider extends ChangeNotifier {
     "printedTree": "printed family tree",
     "births": "Births",
     "review": "Review",
+    "deaths": "Deaths",
+    "next": "Next",
+    "close": "Close",
+    "click": "Click",
+    "infoDeath": "Deceased/deceased information",
+    "parentInfo": "Parent information",
+    "infoDeath2": "    Please select the person whose death you would like to report from the following two options",
+    "deathNewsForm": "Death news form. By submitting any topic in this section, you agree to publish it in the Al-Osra application",
+    "birthNewsForm": "Birth news form. By submitting any topic in this section, you agree to publish it in the Al-Osra application",
+    "chooseParent": "Please choose the father and mother of the child from the directory",
+    "motherInfo":"Mother's information",
+    "fatherInfo":"Father's information",
+    "pressContact":"In the event that the mother's name is not in the list, please report it through the communication icon",
+    "insideFamily":"Inside Family",
+    "outsideFamily":"Outside Family",
+    "gender":"Gender",
+    "babyName":"Quadruple baby name",
+    "firstName":"First name",
+
+
   };
 
   void changeLanguage({bool? EnglishLanguage}) async {
