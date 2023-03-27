@@ -24,6 +24,11 @@ class _DeathsScreenState extends State<DeathsScreen> {
   bool inside=false;
   bool outside=false;
 
+  List<TextEditingController> controller=[
+    TextEditingController(),
+    TextEditingController(),
+    TextEditingController(),
+  ];
 
   @override
   void initState() {
@@ -132,7 +137,38 @@ class _DeathsScreenState extends State<DeathsScreen> {
                       ),
 
                       SizedBox(height:  getSize(context: context).height*0.02,),
-                      CreateChooseFromContact(),
+                      inside==true?  CreateChooseFromContact():SizedBox(),
+
+                      outside==true?
+                          Container(
+                            margin: EdgeInsets.symmetric(horizontal: 10),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                Text(languageProvider!.getTexts("infoDeath") ,
+                                  style: MainLabel.display5(context),
+                                  textAlign: TextAlign.end,
+                                ),
+                                Row(
+                                  children: List.generate(3, (index) => Expanded(
+                                    child: Row(
+                                      children: [
+                                        SizedBox(width: 10,),
+                                        Expanded(child: CreatTextField(
+                                          controller: controller[index],
+                                          height: getSize(context: context).height * 0.04,
+                                          label: languageProvider!.getTexts("firstName"),
+                                          labelStyle: MainLabel.display5(context).copyWith(fontSize: 10),
+                                        )),
+                                      ],
+                                    ),
+                                  ),),
+                                )
+                              ],
+                            ),
+                          )
+
+                          :SizedBox(),
                       SizedBox(height: getSize(context: context).height*0.01,),
 
 

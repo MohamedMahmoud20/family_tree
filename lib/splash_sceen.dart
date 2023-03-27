@@ -1,3 +1,4 @@
+import 'package:family_tree/Screens/briths_screens/briths_screen.dart';
 import 'package:family_tree/Screens/guide_screens/guide_screen.dart';
 import 'package:family_tree/Screens/home_screen.dart';
 import 'package:family_tree/Screens/tree_screens/tree_screen.dart';
@@ -16,7 +17,6 @@ import 'Screens/photo_gallery_screen.dart';
 import 'app_manager/routes_manager.dart';
 
 class SplashScreen extends StatefulWidget {
-  @override
   _SplashScreenState createState() => _SplashScreenState();
 }
 

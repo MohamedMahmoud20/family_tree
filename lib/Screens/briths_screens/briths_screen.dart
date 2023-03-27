@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import '../../app_manager/local_data.dart';
 import '../../common_widgets/creat_app_bar.dart';
 import '../../common_widgets/creat_text_field.dart';
+import '../../common_widgets/create_drop_down_small.dart';
 import '../../providers/language_provider.dart';
 import '../../utilities/text_style.dart';
 
@@ -185,13 +186,13 @@ class _BirthsScreenState extends State<BirthsScreen> {
     return    Expanded(
       child: Container(
         margin: EdgeInsets.only(top: 10),
-        height: getSize(context: context).height * 0.05,
+        height: getSize(context: context).height * 0.04,
         decoration: BoxDecoration(
           border: Border.all(width: 0.7,color: mainColor),
             color: greyColor,
             borderRadius: BorderRadius.circular(10)
         ),
-        child: Center(child: Text("gfh" , style: MainLabel.display5(context),)),
+        child: Center(child: Text("محمد" , style: MainLabel.display5(context),)),
       ),
     );
   }
@@ -210,53 +211,23 @@ class _BirthsScreenState extends State<BirthsScreen> {
           children: [
             onChild==true?SizedBox():  Text("المولود ${title}" , style: MainTitle.display5(context).copyWith(color: mainColor2),),
             SizedBox(height: 5,),
-            InkWell(
-              onTap: (){},
-              child: Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(width: 0.7,color: mainColor),
-
-                    borderRadius: BorderRadius.circular(6),
-                    color: greyColor,
-                  ),
-                  padding: EdgeInsets.all(3),
-                  child: Row(
-                    textDirection: languageProvider!.isEnglish == true
-                        ? TextDirection.ltr
-                        : TextDirection.rtl,
-                    mainAxisSize: MainAxisSize.min,
-                    // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      SizedBox(width: 10,),
-                      Text(
-                        languageProvider!.getTexts("gender"),
-                        style: WhiteLabel.display5(context).
-                        copyWith(fontSize: 14 ),
-                      ),
-                      SizedBox(width: getSize(context: context).width*0.03,),
-                      Icon(
-                        Icons.arrow_drop_down_sharp,
-                        size: 28,
-                        color: mainColor,
-                      ),
-                    ],
-                  )),
-            ),
-            SizedBox(height: 10,),
+            CreateDropDownSmall(),
+            SizedBox(height: getSize(context: context).height * 0.008,),
             Text(languageProvider!.getTexts("babyName") , style: MainLabel.display5(context).copyWith(color: mainColor),),
-            SizedBox(height: 10,),
+            SizedBox(height: getSize(context: context).height * 0.008,),
             Row(
               children: [
-                SizedBox(width: 10,),
+                SizedBox(width: getSize(context: context).height * 0.01,),
                 containerCustom(),
-                SizedBox(width: 10,),
+                SizedBox(width: getSize(context: context).height * 0.01,),
 
                 containerCustom(),
-                SizedBox(width: 10,),
+                SizedBox(width: getSize(context: context).height * 0.01,),
 
                 containerCustom(),
-                SizedBox(width: 10,),
+                SizedBox(width: getSize(context: context).height * 0.01,),
                 Expanded(child: CreatTextField(
+                  height: getSize(context: context).height * 0.04,
                   label: languageProvider!.getTexts("firstName"),
                   labelStyle: MainLabel.display5(context).copyWith(fontSize: 10),
                 )),
