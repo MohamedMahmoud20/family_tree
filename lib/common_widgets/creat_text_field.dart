@@ -135,7 +135,7 @@ class CreatTextField extends StatelessWidget {
                   isDense: true,
                   contentPadding: EdgeInsets.symmetric(vertical: isContact==true?
                   getSize(context: context).height*0.001:
-                  getSize(context: context).height*0.005,
+                  getSize(context: context).height*0.02,
                       horizontal: getSize(context: context).width*0.03),
                   filled: true,
                   fillColor: fillColor ?? Colors.white,

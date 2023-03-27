@@ -1,12 +1,11 @@
 import 'package:family_tree/app_manager/local_data.dart';
 import 'package:family_tree/common_widgets/creat_app_bar.dart';
+import 'package:family_tree/common_widgets/create_drop_down_small.dart';
 import 'package:family_tree/providers/language_provider.dart';
 import 'package:family_tree/utilities/text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
-
 import '../../common_widgets/creat_text_field.dart';
 import '../../common_widgets/create_button2.dart';
 import '../../common_widgets/create_choose_from_contact.dart';
@@ -145,6 +144,8 @@ class _DeathsScreenState extends State<DeathsScreen> {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
+                                CreateDropDownSmall()
+                                ,SizedBox(height: 15,),
                                 Text(languageProvider!.getTexts("infoDeath") ,
                                   style: MainLabel.display5(context),
                                   textAlign: TextAlign.end,

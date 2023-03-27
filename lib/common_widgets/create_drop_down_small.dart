@@ -34,14 +34,12 @@ class _CreateDropDownSmallState extends State<CreateDropDownSmall> {
     super.initState();
   }
 
-
-
   @override
   Widget build(BuildContext context) {
     languageProvider = Provider.of<LanguageProvider>(context, listen: true);
 
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(0.0),
       child: Container(
         width: getSize(context: context).width*0.24,
         child: Column(
