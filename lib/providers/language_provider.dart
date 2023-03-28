@@ -105,6 +105,9 @@ class LanguageProvider extends ChangeNotifier {
     "thirdName":"الاسم الثالث",
     "fourthName":"الاسم الرابع",
     "babyName4":"الاسم رباعي",
+    "confirmCode": "تأكيد الكود",
+    "codeIsSend": "تم إرسال كود التفعيل",
+    "enterCode": "الرجاء إدخال الكود المرسل على رقم جوالك",
 
 
   };
@@ -209,6 +212,9 @@ class LanguageProvider extends ChangeNotifier {
     "thirdName":"Third name",
     "fourthName":"Fourth name",
     "babyName4":"The name is quadruple",
+    "confirmCode": "Confirm Code",
+    "codeIsSend": "The activation code has been sent",
+    "enterCode": "Please enter the code sent to your mobile number",
 
 
   };

@@ -11,10 +11,11 @@ class CreateButton2 extends StatelessWidget {
   LanguageProvider? languageProvider;
   String? title;
   bool? isIcon;
+  double? width;
   Color? color;
   void Function()? onTap;
 
-  CreateButton2({this.title,this.color,this.isIcon,this.onTap});
+  CreateButton2({this.title,this.color,this.isIcon,this.onTap,this.width});
 
   @override
   Widget build(BuildContext context) {

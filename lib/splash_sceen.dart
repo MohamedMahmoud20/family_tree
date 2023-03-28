@@ -6,12 +6,12 @@ import 'package:family_tree/providers/language_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
+import 'Screens/authentication/confirm_code.dart';
+import 'Screens/chaaracters_screen.dart';
 import 'Screens/authentication/complete_data.dart';
 import 'Screens/authentication/information_login.dart';
 import 'Screens/authentication/login_screen.dart';
 import 'Screens/authentication/restore_info_login.dart';
-import 'Screens/chaaracters_screen.dart';
 import 'Screens/contact_us/contact_us.dart';
 import 'Screens/deaths_screen/death_screen.dart';
 import 'Screens/documents_and_books.dart';
@@ -46,7 +46,7 @@ class _SplashScreenState extends State<SplashScreen> {
     //   }
     //
     //   else {
-        RoutesManager.navigatorAndRemove(context, CompleteData());
+        RoutesManager.navigatorAndRemove(context, SendConfirmCode());
     //   }
     });
   }
