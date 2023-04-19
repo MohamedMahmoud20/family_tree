@@ -57,6 +57,7 @@ Future.delayed(Duration(seconds: 2) ,(){
 
 });
 
+
 //     String? userId = SharedPreference.getData(key: 'userId');
 //     String activationCode = SharedPreference.getData(key: 'activationCode')??"";
 // // print("splash activationCode : $activationCode");
